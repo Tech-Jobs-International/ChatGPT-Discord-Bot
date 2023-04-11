@@ -24,7 +24,7 @@ def run():
     client = DiscordClient()
     sender = Sender()
 
-    @client.tree.command(name="chat", description="Have a chat with ChatGPT")
+    @client.tree.command(name="chat", description="Have a chat with chatGPT")
     async def chat(interaction: discord.Interaction, *, message: str):
         user_id = interaction.user.id
         if interaction.user == client.user:
@@ -41,14 +41,14 @@ def run():
         image_url = dalle.generate(prompt)
         await sender.send_image(interaction, prompt, image_url)
 
-    @client.tree.command(name="reset", description="Reset ChatGPT conversation history")
+    @client.tree.command(name="reset", description="Reset chatGPT conversation history")
     async def reset(interaction: discord.Interaction):
         user_id = interaction.user.id
         logger.info(f"resetting memory from {user_id}")
         try:
             chatgpt.clean_history(user_id)
             await interaction.response.defer(ephemeral=True)
-            await interaction.followup.send(f'> Reset ChatGPT conversation history < - <@{user_id}>')
+            await interaction.followup.send(f'> Reset chatGPT conversation history < - <@{user_id}>')
         except Exception as e:
             logger.error(f"Error resetting memory: {e}")
             await interaction.followup.send('> Oops! Something went wrong. <')
