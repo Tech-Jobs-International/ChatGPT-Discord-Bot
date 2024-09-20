@@ -86,10 +86,6 @@ By introducing the ChatGPT Bot into each channel on Discord, simply type `/chat`
 | `/reset` | ChatGPT remembers the last ten conversations. This command clears the history. |
 | `/imagine` | Type `/imagine` in the input box, and it will auto-complete with `prompt`. Enter text to call the DALL·E 2 model and generate images. |
 
-## Support Us
-If you like this project and want to [support us](https://www.buymeacoffee.com/explainthis), you can buy us a coffee. This will motivate us to keep going!
-
-[<a href="https://www.buymeacoffee.com/explainthis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45px" width="162px" alt="Buy Me A Coffee"></a>](https://www.buymeacoffee.com/explainthis)
 
 ## Related Projects
 - [chatGPT-discord-bot](https://github.com/Zero6992/chatGPT-discord-bot)
