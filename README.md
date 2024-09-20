@@ -1,103 +1,99 @@
 # ChatGPT Discord Bot
+# ChatGPT Discord Bot
 
 中文 | [English](README.en.md)
 
 [![license](https://img.shields.io/pypi/l/ansicolortags.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/TheExplainthis/ChatGPT-Discord-Bot)](https://github.com/TheExplainthis/ChatGPT-Discord-Bot/releases/)
 
+ChatGPT is integrated into Discord, allowing teams to quickly improve collaboration, communication, and efficiency. By following the installation steps below, you can also introduce ChatGPT into your own Discord.
 
-ChatGPT 串接到 Discord 上面，使得團隊在協作、溝通、效率上都能夠快速的提升，根據下面的安裝步驟，你也能在自己的 Discord 當中去導入 ChatGPT。
+## Updates
+- 2023/03/03 The model was switched to chat completion: `gpt-3.5-turbo`
 
-## 更新
-- 2023/03/03 模型換成 chat completion: `gpt-3.5-turbo`
-
-
-## 介紹
-在 Discord 裡的每個頻道中導入 ChatGPT Bot，只要在輸入框輸入 `/chat` 就會 有一個 `/chat message` 的關鍵字自動帶入，直接輸入文字即可與 ChatGPT 互動，如下圖所示：
+## Introduction
+By introducing the ChatGPT Bot into each channel on Discord, simply type `/chat` in the input box, and a `/chat message` keyword will be automatically filled in. You can directly enter text to interact with ChatGPT, as shown in the image below:  
 ![Demo](https://github.com/TheExplainthis/ChatGPT-Discord-Bot/blob/main/demo/chatgpt-discord-bot.gif)
 
+## Installation Steps
+### Obtaining Tokens
+1. Get an API Token from OpenAI:
+    1. Register/Log in to the [OpenAI](https://beta.openai.com/) platform.
+    2. In the top right, click on your avatar, and select `View API keys`.
+    3. Click on `Create new secret key` in the middle.
+    - Note: Each API has a free quota and its limitations. For more details, see [OpenAI Pricing](https://openai.com/api/pricing).
+2. Get a Discord Token:
+    1. Log in to the [Discord Developer](https://discord.com/developers/applications) portal.
+    2. Create a bot:
+        1. Go to `Applications` on the left.
+        2. Click `New Application` in the top right, enter the Bot name, and confirm to go to a new page.
+        3. Click `Bot` on the left.
+        4. Click `Add Bot` on the right.
+        5. Enable `MESSAGE CONTENT INTENT` at the bottom.
+        6. Click `Save Changes`.
+        7. Get your Token by selecting `View Token` at the top or `Reset Token` if you already applied for one.
+    3. Set up OAuth2:
+        1. Click `OAuth2` on the left.
+        2. Click `URL Generator` on the left.
+        3. In `SCOPES` on the right, select `bot`, and under `BOT PERMISSIONS` below, select `Administrator`.
+        4. Copy the URL at the bottom and paste it into your browser.
+        5. Select the server you want to add the bot to.
+        6. Click `Continue` > `Authorize`.
 
-## 安裝步驟
-### Token 取得
-1. 取得 OpenAI 給的 API Token：
-    1. [OpenAI](https://beta.openai.com/) 平台中註冊/登入帳號
-    2. 右上方有一個頭像，點入後選擇 `View API keys`
-    3. 點選中間的 `Create new secret key`
-    - 注意：每隻 API 有免費額度，也有其限制，詳情請看 [OpenAI Pricing](https://openai.com/api/pricing/)
-2. 取得 Discord Token：
-    1. 登入 [Discord Developer](https://discord.com/developers/applications)
-    2. 創建機器人：
-        1. 進入左方 `Applications`
-        2. 點擊右上方 `New Application` 並輸入 Bot 的名稱 > 確認後進入新頁面。
-        3. 點擊左方 `Bot`
-        4. 點擊右方 `Add Bot`
-        5. 下方 `MESSAGE CONTENT INTENT` 需打開 
-        6. 按下 `Save Change`
-        7. Token 在上方選擇 `View Token` 或已申請過則會是 `Reset Token` 的按鈕。
-    3. 設定 OAuth2
-        1. 點擊左欄 `OAuth2`
-        2. 點擊左欄 `URL Generator`
-        3. 右欄 `SCOPES` 選擇 `bot`、右欄下方 `BOT PERMISSIONS` 選擇 `Administrator`
-        4. 複製最下方網址到瀏覽器中
-        5. 選擇欲加入的伺服器
-        6. 按下 `繼續` > `授權`
+### Project Setup
+1. Fork the GitHub project:
+    1. Register/Log in to [GitHub](https://github.com/).
+    2. Go to the [ChatGPT-Discord-Bot](https://github.com/TheExplainthis/ChatGPT-Discord-Bot) project.
+    3. Click `Star` to support the developer.
+    4. Click `Fork` to copy all the code to your own repository.
+2. Deploy (using free hosting):
+    1. Go to [Replit](https://replit.com/).
+    2. Click `Sign Up` and log in with your `GitHub` account, then authorize -> click `Skip` to bypass initialization.
+    3. In the middle of the main page, click `Create` -> in the pop-up box, click `Import from Github` in the top right.
+    4. If GitHub repositories haven't been linked yet, click the link `Connect GitHub to import your private repos.` -> check `Only select repositories` -> select `ChatGPT-Discord-Bot`.
+    5. Return to the fourth step, where you can now select the `ChatGPT-Discord-Bot` project -> click `Import from Github`.
 
-### 專案設置
-1. Fork Github 專案：
-    1. 註冊/登入 [GitHub](https://github.com/)
-    2. 進入 [ChatGPT-Discord-Bot](https://github.com/TheExplainthis/ChatGPT-Discord-Bot)
-    3. 點選 `Star` 支持開發者
-    4. 點選 `Fork` 複製全部的程式碼到自己的倉庫
-2. 部署（免費空間）：
-    1. 進入 [replit](https://replit.com/)
-    2. 點選 `Sign Up` 直接用 `Github` 帳號登入並授權 -> 按下 `Skip` 跳過初始化設定
-    3. 進入後中間主頁的部分點選 `Create` -> 跳出框，點選右上角 `Import from Github`
-    4. 若尚未加入 Github 倉庫，則點選連結 `Connect GitHub to import your private repos.` -> 勾選 `Only select repositories` -> 選擇 `ChatGPT-Discord-Bot`
-    5. 回到第四步，此時 `Github URL` 可以選擇 `ChatGPT-Discord-Bot` 專案 -> 點擊 `Import from Github`。
-
-### 專案執行
-1. 環境變數設定
-    1. 接續上一步 `Import` 完成後在 `Replit` 的專案管理頁面左下方 `Tools` 點擊 `Secrets`。
-    2. 右方按下 `Got it` 後，即可新增環境變數，需新增：
-        1. OpenAI API Token：
+### Running the Project
+1. Setting Environment Variables:
+    1. After completing the `Import`, go to the `Replit` project management page, and click `Secrets` under `Tools` in the lower left.
+    2. After clicking `Got it`, you can add environment variables. You need to add the following:
+        1. OpenAI API Token:
             - key: `OPENAI_API`
-            - value: `[由上方步驟一取得] sk-FoXXXX`
-        2. 欲選擇的模型：
+            - value: `[Obtained from step 1] sk-FoXXXX`
+        2. Selected model:
             - key: `OPENAI_MODEL_ENGINE`
-            - value: `gpt-3.5-turbo`  
-        3. ChatGPT 要讓助理扮演的角色詞（目前官方無釋出更多的使用方法，由玩家自行測試）
+            - value: `gpt-3.5-turbo`
+        3. Role message for the assistant (currently not officially supported, so it's up to the user to test).
             - key: `SYSTEM_MESSAGE`
             - value: `You are a helpful assistant.`
         4. Discord Token:
             - key: `DISCORD_TOKEN`
-            - value: `[由上方步驟一取得] MTA3NXXX`
-2. 開始執行
-    1. 點擊上方的 `Run`
-    2. 成功後右邊畫面會顯示 `Hello. I am alive!`，並將畫面中上方的**網址複製**下來，下一步驟會用到
-    - 注意：若一小時內沒有任何請求，則程式會中斷，因此需要下步驟
-3. CronJob 定時發送請求
-    1. 註冊/登入 [cron-job.org](https://cron-job.org/en/)
-    2. 進入後面板右上方選擇 `CREATE CRONJOB`
-    3. `Title` 輸入 `ChatGPT-Discord-Bot`，網址輸入上一步驟的網址
-    4. 下方則每 `5 分鐘` 打一次
-    5. 按下 `CREATE`
+            - value: `[Obtained from step 1] MTA3NXXX`
+2. Start the project:
+    1. Click `Run` at the top.
+    2. Once successful, the right panel will display `Hello. I am alive!`, and you should copy the URL at the top, which will be needed in the next step.
+    - Note: If no requests are made within an hour, the program will stop, so the next step is required.
+3. CronJob to send requests periodically:
+    1. Register/Log in to [cron-job.org](https://cron-job.org/en/).
+    2. In the dashboard, select `CREATE CRONJOB` in the top right.
+    3. Enter `ChatGPT-Discord-Bot` as the `Title` and paste the URL from the previous step into the URL field.
+    4. Set the time interval to send requests every `5 minutes`.
+    5. Click `CREATE`.
 
+## Commands
+| Command | Description |
+| --- | --- |
+| `/chat` | Type `/chat` in the input box, and it will auto-complete with `message`. Enter text to call the ChatGPT model. |
+| `/reset` | ChatGPT remembers the last ten conversations. This command clears the history. |
+| `/imagine` | Type `/imagine` in the input box, and it will auto-complete with `prompt`. Enter text to call the DALL·E 2 model and generate images. |
 
-## 指令
-| 指令 | 說明 |
-| --- | ----- |
-| `/chat` | 在輸入框直接輸入 `/chat` 會後綴 `message` 直接輸入文字，即可調用 ChatGPT 模型。|
-| `/reset` | ChatGPT 會記住前十次的問答紀錄，調用此指令則會清除。|
-| `/imagine` | 在輸入框輸入 `/imagine` 會後綴 `prompt` 直接輸入文字，會調用 DALL·E 2 模型，即可生成圖像。|
-
-
-## 支持我們
-如果你喜歡這個專案，願意[支持我們](https://www.buymeacoffee.com/explainthis)，可以請我們喝一杯咖啡，這會成為我們繼續前進的動力！
+## Support Us
+If you like this project and want to [support us](https://www.buymeacoffee.com/explainthis), you can buy us a coffee. This will motivate us to keep going!
 
 [<a href="https://www.buymeacoffee.com/explainthis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45px" width="162px" alt="Buy Me A Coffee"></a>](https://www.buymeacoffee.com/explainthis)
 
-
-## 相關專案
+## Related Projects
 - [chatGPT-discord-bot](https://github.com/Zero6992/chatGPT-discord-bot)
 
-## 授權
+## License
+
 [MIT](LICENSE)
